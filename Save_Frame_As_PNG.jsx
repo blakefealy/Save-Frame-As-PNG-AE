@@ -1,5 +1,3 @@
-
-
 /* 
 Script Name: Save Frame as PNG
 Summary: Saves a PNG of the current frame in After Effects.
@@ -69,11 +67,15 @@ var numFrames = Math.round(active.duration * frameRate);
 var curFrame = Math.round(curTime * frameRate);
 
 var numDigits = numFrames.toString().length;
-var missingDigits = numDigits - curFrame.toString().length;
-var formatFrame = (missingDigits > 0) 
-    ? "0".repeat(missingDigits) + curFrame.toString() 
-    : curFrame.toString();
+var curFrameStr = curFrame.toString();
+var missingDigits = numDigits - curFrameStr.length;
 
+// Create a padded string for the frame number
+var formatFrame = "";
+for (var i = 0; i < missingDigits; i++) {
+    formatFrame += "0"; // Add leading zeros
+}
+formatFrame += curFrameStr;
 
 var dropTokens = ["Project Name", "Comp Name", "Frame Number", "Today: Day", "Today: Year (yy)", "Today: Year (yyyy)", "Today: Month (mm)", "Today: Month (mmm)", "Today: Month (mmmm)", "Today: Hour", "Today: Minute", "Today: Second"];
 
