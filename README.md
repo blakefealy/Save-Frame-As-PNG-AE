@@ -6,5 +6,6 @@
         - Also includes buttons for adding: hyphens, underscores, and/or spaces to the name.
         - Also includes a custom field for naming that allows you to use to name your entire file or adding small snippets in conjunction with the other buttons and dynamic variables.
     2. Allows user to choose where the file is saved using the file browser functionality.
-
-**Script Created by Blake Fealy**
+## Known Issues:
+    - Due to limitations in the native After Effects Extendscript API, this script only supports saving to local or mapped drives.
+**Script Created & Maintained by Blake Fealy**
