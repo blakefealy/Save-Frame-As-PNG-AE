@@ -286,7 +286,7 @@ function scriptUI(thisObj) {
         try {
             var exportInfo = exportName.text;
             var location = destFolder + slash + exportInfo;
-            active.saveFrameToPng(1, File(location));
+            active.saveFrameToPng(active.time, File(location));
             alert("Export successful: " + location);
         } catch (e) {
             alert("An error occurred during export: " + e.message);
@@ -307,3 +307,4 @@ if (panel instanceof Window) {
     }
 
 //Script Created by Blake Fealy
+
